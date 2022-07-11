@@ -35,9 +35,11 @@ partial class MainForm
 			this.LblMinimize = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.LblClouse = new System.Windows.Forms.Label();
+			this.PBUkraineIcon = new System.Windows.Forms.PictureBox();
 			this.BtnKillPrrocess = new System.Windows.Forms.Button();
 			this.BtnDisableNetwork = new System.Windows.Forms.Button();
 			this.PanelHeader.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PBUkraineIcon)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// BtnClearSession
@@ -45,7 +47,7 @@ partial class MainForm
 			this.BtnClearSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(48)))), ((int)(((byte)(195)))));
 			this.BtnClearSession.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnClearSession.FlatAppearance.BorderSize = 0;
-			this.BtnClearSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
+			this.BtnClearSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(99)))), ((int)(((byte)(223)))));
 			this.BtnClearSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BtnClearSession.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.BtnClearSession.ForeColor = System.Drawing.Color.White;
@@ -103,7 +105,8 @@ partial class MainForm
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-			this.label1.Location = new System.Drawing.Point(8, 9);
+			this.label1.Location = new System.Drawing.Point(9, 9);
+			this.label1.Margin = new System.Windows.Forms.Padding(0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(160, 22);
 			this.label1.TabIndex = 1;
@@ -126,21 +129,33 @@ partial class MainForm
 			this.LblClouse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.LblClouse.Click += new System.EventHandler(this.LblClouse_Click);
 			// 
+			// PBUkraineIcon
+			// 
+			this.PBUkraineIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.PBUkraineIcon.Image = global::GTAV_Controller.Properties.Resources.ukraine;
+			this.PBUkraineIcon.Location = new System.Drawing.Point(155, 305);
+			this.PBUkraineIcon.Margin = new System.Windows.Forms.Padding(7, 1, 0, 0);
+			this.PBUkraineIcon.Name = "PBUkraineIcon";
+			this.PBUkraineIcon.Size = new System.Drawing.Size(50, 50);
+			this.PBUkraineIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.PBUkraineIcon.TabIndex = 6;
+			this.PBUkraineIcon.TabStop = false;
+			// 
 			// BtnKillPrrocess
 			// 
 			this.BtnKillPrrocess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(48)))), ((int)(((byte)(195)))));
 			this.BtnKillPrrocess.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnKillPrrocess.FlatAppearance.BorderSize = 0;
-			this.BtnKillPrrocess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
+			this.BtnKillPrrocess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(99)))), ((int)(((byte)(223)))));
 			this.BtnKillPrrocess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BtnKillPrrocess.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.BtnKillPrrocess.ForeColor = System.Drawing.Color.White;
 			this.BtnKillPrrocess.Location = new System.Drawing.Point(55, 243);
-			this.BtnKillPrrocess.Margin = new System.Windows.Forms.Padding(0, 0, 0, 50);
+			this.BtnKillPrrocess.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnKillPrrocess.Name = "BtnKillPrrocess";
 			this.BtnKillPrrocess.Size = new System.Drawing.Size(250, 50);
 			this.BtnKillPrrocess.TabIndex = 4;
-			this.BtnKillPrrocess.Text = "KILL PROCESS";
+			this.BtnKillPrrocess.Text = "CLOSE GAME";
 			this.BtnKillPrrocess.UseVisualStyleBackColor = false;
 			this.BtnKillPrrocess.Click += new System.EventHandler(this.BtnKillPrrocess_Click);
 			// 
@@ -149,7 +164,7 @@ partial class MainForm
 			this.BtnDisableNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(48)))), ((int)(((byte)(195)))));
 			this.BtnDisableNetwork.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnDisableNetwork.FlatAppearance.BorderSize = 0;
-			this.BtnDisableNetwork.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
+			this.BtnDisableNetwork.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(99)))), ((int)(((byte)(223)))));
 			this.BtnDisableNetwork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BtnDisableNetwork.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.BtnDisableNetwork.ForeColor = System.Drawing.Color.White;
@@ -166,7 +181,8 @@ partial class MainForm
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-			this.ClientSize = new System.Drawing.Size(360, 350);
+			this.ClientSize = new System.Drawing.Size(360, 365);
+			this.Controls.Add(this.PBUkraineIcon);
 			this.Controls.Add(this.BtnDisableNetwork);
 			this.Controls.Add(this.BtnKillPrrocess);
 			this.Controls.Add(this.PanelHeader);
@@ -183,6 +199,7 @@ partial class MainForm
 			this.MouseHover += new System.EventHandler(this.MainForm_Load);
 			this.PanelHeader.ResumeLayout(false);
 			this.PanelHeader.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PBUkraineIcon)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -198,4 +215,5 @@ partial class MainForm
 	private Label label1;
 	private Label LblMinimize;
 	private Button BtnDisableNetwork;
+	private PictureBox PBUkraineIcon;
 }

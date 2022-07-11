@@ -1,6 +1,7 @@
 global using MProcess;
 global using System.Diagnostics;
 global using System.Runtime.InteropServices;
+global using System.Net.NetworkInformation;
 
 namespace GTAV_Tool;
 
