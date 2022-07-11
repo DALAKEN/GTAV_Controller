@@ -36,6 +36,7 @@ partial class MainForm
 			this.label1 = new System.Windows.Forms.Label();
 			this.LblClouse = new System.Windows.Forms.Label();
 			this.BtnKillPrrocess = new System.Windows.Forms.Button();
+			this.BtnDisableNetwork = new System.Windows.Forms.Button();
 			this.PanelHeader.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -46,12 +47,12 @@ partial class MainForm
 			this.BtnClearSession.FlatAppearance.BorderSize = 0;
 			this.BtnClearSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
 			this.BtnClearSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.BtnClearSession.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.BtnClearSession.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.BtnClearSession.ForeColor = System.Drawing.Color.White;
-			this.BtnClearSession.Location = new System.Drawing.Point(55, 124);
+			this.BtnClearSession.Location = new System.Drawing.Point(55, 123);
 			this.BtnClearSession.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
 			this.BtnClearSession.Name = "BtnClearSession";
-			this.BtnClearSession.Size = new System.Drawing.Size(250, 60);
+			this.BtnClearSession.Size = new System.Drawing.Size(250, 50);
 			this.BtnClearSession.TabIndex = 0;
 			this.BtnClearSession.Text = "CLEAR SESSION";
 			this.BtnClearSession.UseVisualStyleBackColor = false;
@@ -61,14 +62,14 @@ partial class MainForm
 			// 
 			this.LblProcessInfo.AutoSize = true;
 			this.LblProcessInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-			this.LblProcessInfo.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.LblProcessInfo.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.LblProcessInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-			this.LblProcessInfo.Location = new System.Drawing.Point(55, 91);
-			this.LblProcessInfo.Margin = new System.Windows.Forms.Padding(0, 50, 0, 10);
+			this.LblProcessInfo.Location = new System.Drawing.Point(55, 70);
+			this.LblProcessInfo.Margin = new System.Windows.Forms.Padding(0, 50, 0, 25);
 			this.LblProcessInfo.Name = "LblProcessInfo";
-			this.LblProcessInfo.Size = new System.Drawing.Size(226, 24);
+			this.LblProcessInfo.Size = new System.Drawing.Size(220, 28);
 			this.LblProcessInfo.TabIndex = 1;
-			this.LblProcessInfo.Text = "PRROCESS NOT FOUND";
+			this.LblProcessInfo.Text = "GAME NOT STARTED";
 			// 
 			// PanelHeader
 			// 
@@ -77,6 +78,7 @@ partial class MainForm
 			this.PanelHeader.Controls.Add(this.label1);
 			this.PanelHeader.Controls.Add(this.LblClouse);
 			this.PanelHeader.Location = new System.Drawing.Point(0, 0);
+			this.PanelHeader.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
 			this.PanelHeader.Name = "PanelHeader";
 			this.PanelHeader.Size = new System.Drawing.Size(360, 40);
 			this.PanelHeader.TabIndex = 3;
@@ -131,23 +133,41 @@ partial class MainForm
 			this.BtnKillPrrocess.FlatAppearance.BorderSize = 0;
 			this.BtnKillPrrocess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
 			this.BtnKillPrrocess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.BtnKillPrrocess.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.BtnKillPrrocess.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.BtnKillPrrocess.ForeColor = System.Drawing.Color.White;
-			this.BtnKillPrrocess.Location = new System.Drawing.Point(55, 194);
+			this.BtnKillPrrocess.Location = new System.Drawing.Point(55, 243);
 			this.BtnKillPrrocess.Margin = new System.Windows.Forms.Padding(0, 0, 0, 50);
 			this.BtnKillPrrocess.Name = "BtnKillPrrocess";
-			this.BtnKillPrrocess.Size = new System.Drawing.Size(250, 60);
+			this.BtnKillPrrocess.Size = new System.Drawing.Size(250, 50);
 			this.BtnKillPrrocess.TabIndex = 4;
 			this.BtnKillPrrocess.Text = "KILL PROCESS";
 			this.BtnKillPrrocess.UseVisualStyleBackColor = false;
 			this.BtnKillPrrocess.Click += new System.EventHandler(this.BtnKillPrrocess_Click);
+			// 
+			// BtnDisableNetwork
+			// 
+			this.BtnDisableNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(48)))), ((int)(((byte)(195)))));
+			this.BtnDisableNetwork.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.BtnDisableNetwork.FlatAppearance.BorderSize = 0;
+			this.BtnDisableNetwork.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(111)))), ((int)(((byte)(241)))));
+			this.BtnDisableNetwork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.BtnDisableNetwork.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.BtnDisableNetwork.ForeColor = System.Drawing.Color.White;
+			this.BtnDisableNetwork.Location = new System.Drawing.Point(55, 183);
+			this.BtnDisableNetwork.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+			this.BtnDisableNetwork.Name = "BtnDisableNetwork";
+			this.BtnDisableNetwork.Size = new System.Drawing.Size(250, 50);
+			this.BtnDisableNetwork.TabIndex = 5;
+			this.BtnDisableNetwork.Text = "DISABLE NETWORK";
+			this.BtnDisableNetwork.UseVisualStyleBackColor = false;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-			this.ClientSize = new System.Drawing.Size(360, 310);
+			this.ClientSize = new System.Drawing.Size(360, 350);
+			this.Controls.Add(this.BtnDisableNetwork);
 			this.Controls.Add(this.BtnKillPrrocess);
 			this.Controls.Add(this.PanelHeader);
 			this.Controls.Add(this.LblProcessInfo);
@@ -177,4 +197,5 @@ partial class MainForm
 	private Label LblClouse;
 	private Label label1;
 	private Label LblMinimize;
+	private Button BtnDisableNetwork;
 }

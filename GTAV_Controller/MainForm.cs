@@ -105,7 +105,7 @@ public partial class MainForm : Form
     private void NotFoundMsg()
 	{
         LblProcessInfo.ForeColor = ColorTranslator.FromHtml(_red);
-        LblProcessInfo.Text = "PRROCESS NOT FOUND";
+        LblProcessInfo.Text = "GAME NOT STARTED";
     }
     private void LblClouse_Click(object sender, EventArgs e)
     {
