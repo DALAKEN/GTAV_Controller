@@ -1,4 +1,4 @@
-namespace GTAV_Tool;
+namespace GTAV_Controller;
 
 public partial class MainForm : Form
 {
@@ -8,7 +8,13 @@ public partial class MainForm : Form
         Update();
     }
 
-    //Drag Form
+    private void MainForm_Load(object sender, EventArgs e)
+    {
+        Update();
+    }
+
+    // DRAG FORM:
+
     [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
     private extern static void ReleaseCapture();
     [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -20,22 +26,32 @@ public partial class MainForm : Form
         SendMessage(this.Handle, 0x112, 0xf012, 0);
     }
 
-    private void MainForm_Load(object sender, EventArgs e)
-	{
-        Update();
-    }
+    // PAINT BORDER:
 
     private void MainForm_Paint(object sender, PaintEventArgs e)
     {
         e.Graphics.DrawRectangle(Pens.Black, new Rectangle(0, 0, Width - 1, Height - 1));
     }
 
+    // BUTTONS:
+
     private void BtnClearSession_Click(object sender, EventArgs e)
     {
         if (Update())
         {
 		    if (_timerWait != null) _timerWait.Stop();
-		    _tool.SuspendProcess();
+		    _process.SuspendProcess();
+            TimerWait();
+        }
+        Update();
+    }
+
+    private void BtnDisableNetwork_Click(object sender, EventArgs e)
+    {
+        if (Update())
+        {
+            if (_timerWait != null) _timerWait.Stop();
+            _network.DisableAdapter(ref _adaptersName);
             TimerWait();
         }
         Update();
@@ -47,24 +63,36 @@ public partial class MainForm : Form
 		{
             if (_timerWait != null) _timerWait.Stop();
             _delay = _PERMANENT_DALAY;
-            _tool.KillProcess();
+            _process.KillProcess();
             NotFoundMsg();
         }
     }
+
+    private void LblClouse_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+
+    private void LblMinimize_Click(object sender, EventArgs e)
+    {
+        this.WindowState = FormWindowState.Minimized;
+    }
+
+    // SUPPORT METHODS:
 
     private bool Update()
 	{
         if (_delay == _PERMANENT_DALAY)
 		{
-            _tool = null;
-            _tool = new Tool(_processName);
+            _process = null;
+            _process = new ProcessController(_processName);
 
-            if (_tool.CheckProcess())
+            if (_process.CheckProcess())
             {
                 ReadyMsg();
                 return true;
             }
-            else if (!_tool.CheckProcess())
+            else if (!_process.CheckProcess())
             {
                 NotFoundMsg();
                 return false;
@@ -87,7 +115,8 @@ public partial class MainForm : Form
         {
             _delay = _PERMANENT_DALAY;
             _timerWait.Stop();
-            _tool.ResumeProcess();
+            _process.ResumeProcess();
+            _network.EnableAdapter(ref _adaptersName);
             Update();
             return;
         }
@@ -107,24 +136,17 @@ public partial class MainForm : Form
         LblProcessInfo.ForeColor = ColorTranslator.FromHtml(_red);
         LblProcessInfo.Text = "GAME NOT STARTED";
     }
-    private void LblClouse_Click(object sender, EventArgs e)
-    {
-        Close();
-    }
 
-	private void LblMinimize_Click(object sender, EventArgs e)
-	{
-        this.WindowState = FormWindowState.Minimized;
-    }
-
-    private Tool _tool;
+    private ProcessController _process;
     private string _processName = "GTA5";
     private System.Windows.Forms.Timer _timerWait;
     private int _delay = _PERMANENT_DALAY;
     private const int _PERMANENT_DALAY = 15;
 
+    private NetworkController _network = new NetworkController();
+    private List<string> _adaptersName = new List<string>();
+
     private string _green = "#36AE7C";
     private string _red = "#EB5353";
     private string _yellow = "#FFFDA2";
-    private string _grey = "#476072";
 }

@@ -1,8 +1,8 @@
-﻿namespace GTAV_Tool;
+﻿namespace GTAV_Controller;
 
-class Tool
+class ProcessController
 {
-	public Tool(in string name)
+	public ProcessController(in string name)
 	{
 		_name = name;
 		_pid = ProcessAccess.GetPidWithName(_name);

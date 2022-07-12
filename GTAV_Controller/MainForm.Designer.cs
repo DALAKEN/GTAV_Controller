@@ -1,4 +1,4 @@
-﻿namespace GTAV_Tool;
+﻿namespace GTAV_Controller;
 
 partial class MainForm
 {
@@ -175,6 +175,7 @@ partial class MainForm
 			this.BtnDisableNetwork.TabIndex = 5;
 			this.BtnDisableNetwork.Text = "DISABLE NETWORK";
 			this.BtnDisableNetwork.UseVisualStyleBackColor = false;
+			this.BtnDisableNetwork.Click += new System.EventHandler(this.BtnDisableNetwork_Click);
 			// 
 			// MainForm
 			// 
