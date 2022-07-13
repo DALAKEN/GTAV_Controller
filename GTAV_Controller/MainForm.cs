@@ -51,7 +51,8 @@ public partial class MainForm : Form
         if (Update())
         {
             if (_timerWait != null) _timerWait.Stop();
-            _network.DisableAdapter(ref _adaptersName);
+            _network.DisableAdapter(ref _nameAdapters);
+            _stateAdapters = false;
             TimerWait();
         }
         Update();
@@ -115,16 +116,23 @@ public partial class MainForm : Form
         {
             _delay = _PERMANENT_DALAY;
             _timerWait.Stop();
-            _process.ResumeProcess();
-            _network.EnableAdapter(ref _adaptersName);
+
+            // better return, but now it's okay:
+            if (_stateAdapters == false)
+			{
+                _network.EnableAdapter(ref _nameAdapters);  // better return, but now it's okay )
+                _stateAdapters = true;
+            }
+
+            _process.ResumeProcess();    
+
             Update();
             return;
         }
         LblProcessInfo.ForeColor = ColorTranslator.FromHtml(_yellow);
         LblProcessInfo.Text = $"WAIT: {_delay.ToString()}";
         --_delay;
-    }
-
+    }    
     private void ReadyMsg()
 	{
         LblProcessInfo.ForeColor = ColorTranslator.FromHtml(_green);
@@ -138,13 +146,14 @@ public partial class MainForm : Form
     }
 
     private ProcessController _process;
-    private string _processName = "GTA5";
+    private string _processName = "notepad";
     private System.Windows.Forms.Timer _timerWait;
     private int _delay = _PERMANENT_DALAY;
     private const int _PERMANENT_DALAY = 15;
 
     private NetworkController _network = new NetworkController();
-    private List<string> _adaptersName = new List<string>();
+    private List<string> _nameAdapters = new List<string>();
+    private bool _stateAdapters = true;
 
     private string _green = "#36AE7C";
     private string _red = "#EB5353";

@@ -66,7 +66,7 @@ partial class MainForm
 			this.LblProcessInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
 			this.LblProcessInfo.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.LblProcessInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-			this.LblProcessInfo.Location = new System.Drawing.Point(51, 67);
+			this.LblProcessInfo.Location = new System.Drawing.Point(52, 67);
 			this.LblProcessInfo.Margin = new System.Windows.Forms.Padding(0, 50, 0, 25);
 			this.LblProcessInfo.Name = "LblProcessInfo";
 			this.LblProcessInfo.Size = new System.Drawing.Size(220, 28);
@@ -133,7 +133,7 @@ partial class MainForm
 			// 
 			this.PBUkraineIcon.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.PBUkraineIcon.Image = global::GTAV_Controller.Properties.Resources.ukraine;
-			this.PBUkraineIcon.Location = new System.Drawing.Point(155, 305);
+			this.PBUkraineIcon.Location = new System.Drawing.Point(155, 303);
 			this.PBUkraineIcon.Margin = new System.Windows.Forms.Padding(7, 1, 0, 0);
 			this.PBUkraineIcon.Name = "PBUkraineIcon";
 			this.PBUkraineIcon.Size = new System.Drawing.Size(50, 50);
