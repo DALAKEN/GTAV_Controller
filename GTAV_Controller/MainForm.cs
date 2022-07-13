@@ -63,6 +63,11 @@ public partial class MainForm : Form
         }
     }
 
+    private void PBUkraineIcon_Click(object sender, EventArgs e)
+    {
+        Process.Start(new ProcessStartInfo("https://github.com/DALAKEN/GTAV_Controller/releases/tag/GTAV") { UseShellExecute = true });
+    }
+
     private void LblClouse_Click(object sender, EventArgs e)
     {
         if (_delay == _PERMANENT_DALAY) Close();
@@ -151,9 +156,4 @@ public partial class MainForm : Form
     private string _green = "#36AE7C";
     private string _red = "#EB5353";
     private string _yellow = "#FFFDA2";
-
-	private void PBUkraineIcon_Click(object sender, EventArgs e)
-	{
-        Process.Start(new ProcessStartInfo("https://github.com/DALAKEN/GTAV_Controller") { UseShellExecute = true });
-    }
 }
