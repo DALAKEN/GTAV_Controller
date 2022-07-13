@@ -39,31 +39,25 @@ public partial class MainForm : Form
     {
         if (Update())
         {
-		    if (_timerWait != null) _timerWait.Stop();
 		    _process.SuspendProcess();
             TimerWait();
         }
-        Update();
     }
 
     private void BtnDisableNetwork_Click(object sender, EventArgs e)
     {
         if (Update())
         {
-            if (_timerWait != null) _timerWait.Stop();
             _network.DisableAdapter(ref _nameAdapters);
             _stateAdapters = false;
             TimerWait();
         }
-        Update();
     }
 
     private void BtnKillPrrocess_Click(object sender, EventArgs e)
     { 
         if(Update())
 		{
-            if (_timerWait != null) _timerWait.Stop();
-            _delay = _PERMANENT_DALAY;
             _process.KillProcess();
             NotFoundMsg();
         }
@@ -71,7 +65,7 @@ public partial class MainForm : Form
 
     private void LblClouse_Click(object sender, EventArgs e)
     {
-        Close();
+        if (_delay == _PERMANENT_DALAY) Close();
     }
 
     private void LblMinimize_Click(object sender, EventArgs e)
@@ -85,7 +79,6 @@ public partial class MainForm : Form
 	{
         if (_delay == _PERMANENT_DALAY)
 		{
-            _process = null;
             _process = new ProcessController(_processName);
 
             if (_process.CheckProcess())
@@ -149,7 +142,7 @@ public partial class MainForm : Form
     private string _processName = "notepad";
     private System.Windows.Forms.Timer _timerWait;
     private int _delay = _PERMANENT_DALAY;
-    private const int _PERMANENT_DALAY = 15;
+    private const int _PERMANENT_DALAY = 5;
 
     private NetworkController _network = new NetworkController();
     private List<string> _nameAdapters = new List<string>();

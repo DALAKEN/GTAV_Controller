@@ -52,8 +52,12 @@ class NetworkController
         if (state) psi = new ProcessStartInfo("netsh", "interface set interface \"" + adapter + "\" enable");
         else psi = new ProcessStartInfo("netsh", "interface set interface \"" + adapter + "\" disable");
 
-        Process p = new Process();
-        p.StartInfo = psi;
-        p.Start();
+        Process process = new Process();
+        process.StartInfo = psi;
+
+        process.StartInfo.UseShellExecute = false;  // New window
+        process.StartInfo.CreateNoWindow = true;    // Hidden window
+
+        process.Start();
     }
 }
