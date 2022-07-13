@@ -140,6 +140,7 @@ partial class MainForm
 			this.PBUkraineIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.PBUkraineIcon.TabIndex = 6;
 			this.PBUkraineIcon.TabStop = false;
+			this.PBUkraineIcon.Click += new System.EventHandler(this.PBUkraineIcon_Click);
 			// 
 			// BtnKillPrrocess
 			// 

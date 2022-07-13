@@ -139,10 +139,10 @@ public partial class MainForm : Form
     }
 
     private ProcessController _process;
-    private string _processName = "notepad";
+    private string _processName = "GTA5";
     private System.Windows.Forms.Timer _timerWait;
     private int _delay = _PERMANENT_DALAY;
-    private const int _PERMANENT_DALAY = 5;
+    private const int _PERMANENT_DALAY = 15;
 
     private NetworkController _network = new NetworkController();
     private List<string> _nameAdapters = new List<string>();
@@ -151,4 +151,9 @@ public partial class MainForm : Form
     private string _green = "#36AE7C";
     private string _red = "#EB5353";
     private string _yellow = "#FFFDA2";
+
+	private void PBUkraineIcon_Click(object sender, EventArgs e)
+	{
+        Process.Start(new ProcessStartInfo("https://github.com/DALAKEN/GTAV_Controller") { UseShellExecute = true });
+    }
 }
